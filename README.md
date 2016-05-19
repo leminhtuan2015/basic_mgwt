@@ -22,7 +22,7 @@ $ ./compile-apk.sh  // Compile Java code to Javascript code, Copy js, css, from 
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 ```
 
-===>>>
+Good file looks like ===>>>
 
 ```html
 <!DOCTYPE html>
