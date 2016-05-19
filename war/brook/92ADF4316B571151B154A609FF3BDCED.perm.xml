@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><permutation name="92ADF4316B571151B154A609FF3BDCED">
+<variables>
+<phonegap.env>yes</phonegap.env>
+<mgwt.density>xhigh</mgwt.density>
+</variables>
+<files>
+<file>brook/92ADF4316B571151B154A609FF3BDCED.cache.js</file>
+<file>brook/compilation-mappings.txt</file>
+<file>brook/brook.devmode.js</file>
+<file>brook/brook.nocache.js</file>
+<file>brook/clear.cache.gif</file>
+</files>
+</permutation>

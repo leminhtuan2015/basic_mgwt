@@ -1,0 +1,6 @@
+CORDOVA_PATH="/home/leminhtuan/GWT/projects"
+CORDOVA_PROJECT_NAME="basic_cordova"
+CORDOVAR_PROJECT_PACKAGE="com.tuanlm.basic"
+
+GWT_PATH="/home/leminhtuan/GWT/projects"
+GWT_PROJECT_NAME="basicgwt"
