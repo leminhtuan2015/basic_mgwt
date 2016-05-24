@@ -1,2 +1,0 @@
-serviceClass: com.truong.brook.client.DataService
-path: 62CF171E87F768CDB5939BEA8D77ECB6.gwt.rpc

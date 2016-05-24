@@ -1,4 +1,4 @@
 # Module brook
 # RPC service class, partial path of RPC policy file
+com.truong.brook.client.services.DataService, 2C9BC85718533A8EE88230523540AC72.gwt.rpc
 com.googlecode.gwtphonegap.client.log.shared.PhoneGapLogService, A71599ED2C7DF62C363FBFE67B47386E.gwt.rpc
-com.truong.brook.client.DataService, 62CF171E87F768CDB5939BEA8D77ECB6.gwt.rpc
