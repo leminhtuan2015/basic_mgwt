@@ -5,7 +5,7 @@
 *.war
 
 # gwt caches and compiled units #
-war/brook
+#war/brook
 gwt-unitCache/
 
 # boilerplate generated classes #
@@ -26,3 +26,4 @@ www-test/
 
 #old GWT (1.5) created this dir
 .gwt-tmp/
+/test-classes/
