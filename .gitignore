@@ -5,7 +5,7 @@
 *.war
 
 # gwt caches and compiled units #
-war/
+war/brook
 gwt-unitCache/
 
 # boilerplate generated classes #
