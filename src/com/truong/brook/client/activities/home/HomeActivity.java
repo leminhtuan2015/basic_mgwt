@@ -9,6 +9,10 @@ import com.truong.brook.client.activities.ClientFactory;
 import com.truong.brook.client.activities.basic.BasicActivity;
 import com.truong.brook.client.sliding.SlidingPanel;
 import com.truong.brook.client.view.Toaster;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public class HomeActivity extends BasicActivity {
 
@@ -37,6 +41,26 @@ public class HomeActivity extends BasicActivity {
 	@Override
 	protected void bind() {
 		super.bind();
+
+		addHandlerRegistration(view.getBtnTestConect().addClickHandler(
+				new ClickHandler() {
+					@Override
+					public void onClick(ClickEvent event) {
+						Brook.dataService
+								.testConectToServer(new AsyncCallback<String>() {
+
+									@Override
+									public void onSuccess(String result) {
+										Window.alert(result);
+									}
+
+									@Override
+									public void onFailure(Throwable caught) {
+										Window.alert("Có lỗi xảy ra vui lòng thử lại.");
+									}
+								});
+					}
+				}));
 	}
 
 	@Override

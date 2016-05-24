@@ -28,6 +28,8 @@ import com.truong.brook.client.activities.PhoneAnimationMapper;
 import com.truong.brook.client.activities.home.HomePlace;
 import com.truong.brook.client.audio.AudioPlayer;
 import com.truong.brook.client.audio.MobileAudioPlayer;
+import com.truong.brook.client.services.DataServiceAsync;
+import com.truong.brook.client.services.DataService;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -40,6 +42,8 @@ public class Brook implements EntryPoint {
 	public static PhoneGap phoneGap = GWT.create(PhoneGap.class);
 	public static ClientFactory clientFactory = new ClientFactoryImpl();
 	private static AudioPlayer audioPlayer = null;
+	public static DataServiceAsync dataService = GWT.create(DataService.class);
+
 
 	public void onModuleLoad() {
 		initializeJsniConnect(this);
