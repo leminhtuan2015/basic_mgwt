@@ -11,6 +11,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.truong.brook.client.Brook;
 import com.truong.brook.client.ClientUtils;
 import com.truong.brook.client.activities.basic.BasicViewImpl;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.event.dom.client.HasClickHandlers;
 
 public class HomeViewImpl extends BasicViewImpl implements HomeView{
 	private static HomeViewImplUiBinder uiBinder = GWT
@@ -20,6 +22,7 @@ public class HomeViewImpl extends BasicViewImpl implements HomeView{
 	}
 	@UiField protected FlowPanel homeViewPanel;
 	@UiField protected VerticalPanel containerPanel;
+	@UiField protected Button btnTestConnect;
 	
 	public HomeViewImpl() {	
 		super();
@@ -42,5 +45,10 @@ public class HomeViewImpl extends BasicViewImpl implements HomeView{
 			containerPanel.setCellVerticalAlignment(Brook.getAudioPlayer().isWidget(), HasVerticalAlignment.ALIGN_MIDDLE);
 			containerPanel.setCellHorizontalAlignment(Brook.getAudioPlayer().isWidget(), HasHorizontalAlignment.ALIGN_CENTER);
 		}
+	}
+	
+	@Override
+	public HasClickHandlers getBtnTestConect() {
+	  return btnTestConnect;
 	}
 }

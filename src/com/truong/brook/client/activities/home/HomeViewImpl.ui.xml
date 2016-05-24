@@ -24,6 +24,7 @@
 		ui:field="homeViewPanel">
 		<g:VerticalPanel width="100%" ui:field="containerPanel"
 			spacing="10" addStyleNames="{style.container}">
+			<g:Button ui:field="btnTestConnect">Test connect server</g:Button>
 		</g:VerticalPanel>
 	</g:FlowPanel>
 </ui:UiBinder> 
