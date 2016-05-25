@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Brook" basedir="." default="gwt-compile">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="Brook" basedir="." default="gwt-compile">
 
 	<property name="gwt.brook" value="com.truong.brook.Brook" />
 	<property name="server.resources.name" value="server_resources" />
@@ -9,7 +9,8 @@
 	<property name="server.resources.dir" location="war/${server.resources.name}" />
 	<property name="build.dir" location="build" />
 	<property name="build.server.resources.dir" location="war/WEB-INF/classes/server_resources" />
-	<property name="lib.dir" location="war/WEB-INF/lib" />
+	<property name="lib.dir" location="lib" />
+	<property name="war.lib.dir" location="war/WEB-INF/lib" />
 	<property name="gwt.client.dir" location="com/truong/brook/client" />
 
 	<!-- Configure path to GWT SDK -->
@@ -22,7 +23,7 @@
 		<fileset dir="${lib.dir}">
 			<include name="**/*.jar" />
 		</fileset>
-		<fileset dir="war/WEB-INF/lib" includes="*.jar" />
+		<fileset dir="${lib.dir}" includes="*.jar" />
 		<pathelement location="war/WEB-INF/classes" />
 		<pathelement location="${gwt.sdk}/gwt-user.jar" />
 		<pathelement location="${gwt.sdk}/gwt-dev.jar" />
@@ -79,6 +80,7 @@
 			<classpath refid="project.classpath" />
 		</javac>
 	</target>
+	
 	<!-- Invoke the GWT compiler to create the Javascript for us -->
 	<target name="gwt-compile" depends="compile">
 		<java failonerror="true" fork="true" classname="com.google.gwt.dev.Compiler">
@@ -94,35 +96,25 @@
 			<arg value="${gwt.brook}" />
 		</java>
 	</target>
-	<!-- Package the compiled Java source into a JAR file -->
-	<target name="jar" depends="compile">
-		<jar jarfile="${lib.dir}/${jar.name}" basedir="${build.dir}/">
-			<!-- Don't wrap any of the client only code into the JAR -->
-			<exclude name="${gwt.client.dir}/**/*.class" />
-		</jar>
-	</target>
-	<!-- Copy the static server resources into the required directory ready for packaging -->
-	<!--
-    <target name="copy-resources">
-        <copy todir="${build.server.resources.dir}" preservelastmodified="true">
-            <fileset dir="${server.resources.dir}"/>            
-        </copy>
-    </target> 
-    -->
-	<!-- Package the JAR file, Javascript, static resources 
-    and external libraries into a WAR file -->
-	<!--<target name="war" depends="gwt-compile, jar, copy-resources">-->
-	<!--<target name="war" depends="gwt-compile, jar">-->
+
 	<target name="war" depends="gwt-compile">
 		<war basedir="war" destfile="${war.name}" webxml="war/WEB-INF/web.xml">
 			<exclude name="WEB-INF/**" />
 			<exclude name="${server.resources.name}/**" />
+			
 			<webinf dir="war/WEB-INF/">
-				<include name="classes/${server.resources.name}/**" />
 				<include name="**/*.jar" />
 				<exclude name="**/gwt-dev.jar" />
 				<exclude name="**/gwt-user.jar" />
 			</webinf>
+			
+			<classes dir="${build.dir}"/>
 		</war>
 	</target>
+	
+    <target name="ivy" description="--> retrieve dependencies with ivy">
+    	<mkdir dir="war/WEB-INF/lib" />
+    	<ivy:retrieve />
+        <!--<ivy:retrieve type="jar"/>-->
+    </target>
 </project>

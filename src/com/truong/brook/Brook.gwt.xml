@@ -5,8 +5,9 @@
   "http://gwtproject.org/doctype/2.7.0/gwt-module.dtd">
 <module rename-to='brook'>
 	<!-- Inherit the core Web Toolkit stuff. -->
-	<define-property name="gwt.logging.firebugHandler" values="ENABLED, DISABLED"/>
+    <define-property name="gwt.logging.firebugHandler" values="ENABLED, DISABLED"/>
 	<define-property name="gwt.logging.popupHandler" values="ENABLED, DISABLED"/>
+
 	<inherits name='com.google.gwt.user.User' />
 	<inherits name="com.google.gwt.activity.Activity" />
 	<inherits name="com.googlecode.mgwt.MGWT" />

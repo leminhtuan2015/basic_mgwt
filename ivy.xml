@@ -1,0 +1,20 @@
+<ivy-module version="2.0">
+    <info organisation="apache" module="hello-ivy"/>
+    
+    <dependencies>
+        <!-- http://mvnrepository.com/artifact/com.notnoop.apns/apns -->
+		<dependency org="com.notnoop.apns" name="apns" rev="0.2.3"/>
+		
+		<!-- http://mvnrepository.com/artifact/com.google.guava/guava -->
+		<dependency org="com.google.guava" name="guava" rev="17.0"/>
+		
+		<!-- http://mvnrepository.com/artifact/com.googlecode.gwtphonegap/gwtphonegap -->
+		<dependency org="com.googlecode.gwtphonegap" name="gwtphonegap" rev="3.5.0.0"/>
+
+		<!-- http://mvnrepository.com/artifact/com.googlecode.mgwt/mgwt -->
+		<dependency org="com.googlecode.mgwt" name="mgwt" rev="2.0.0"/>
+
+		<!-- http://mvnrepository.com/artifact/com.googlecode.objectify/objectify -->
+		<dependency org="com.googlecode.objectify" name="objectify" rev="5.0"/>
+    </dependencies>
+</ivy-module>
